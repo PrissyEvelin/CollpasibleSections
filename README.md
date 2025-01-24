@@ -95,5 +95,5 @@ Support additional sorting options (e.g., by population or name).
 Fetch city data from a remote API instead of a local JSON file.
 
 License
-This project is open-source and available under the MIT License.
+This project is open-source and available
 
