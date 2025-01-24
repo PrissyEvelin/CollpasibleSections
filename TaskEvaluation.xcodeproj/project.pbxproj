@@ -14,6 +14,10 @@
 		A9F2FA3B2D43CD4300ED1F25 /* TaskEvaluationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2FA3A2D43CD4300ED1F25 /* TaskEvaluationTests.swift */; };
 		A9F2FA452D43CD4300ED1F25 /* TaskEvaluationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2FA442D43CD4300ED1F25 /* TaskEvaluationUITests.swift */; };
 		A9F2FA472D43CD4300ED1F25 /* TaskEvaluationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2FA462D43CD4300ED1F25 /* TaskEvaluationUITestsLaunchTests.swift */; };
+		A9F2FA572D43CDAF00ED1F25 /* CitiesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2FA562D43CDAF00ED1F25 /* CitiesModel.swift */; };
+		A9F2FA5B2D43CE0600ED1F25 /* au_cities.json in Resources */ = {isa = PBXBuildFile; fileRef = A9F2FA5A2D43CE0600ED1F25 /* au_cities.json */; };
+		A9F2FA5D2D43CE3600ED1F25 /* CitiesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9F2FA5C2D43CE3600ED1F25 /* CitiesViewModel.swift */; };
+		A9F2FA5F2D43E23C00ED1F25 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A9F2FA5E2D43E12100ED1F25 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +48,10 @@
 		A9F2FA402D43CD4300ED1F25 /* TaskEvaluationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TaskEvaluationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9F2FA442D43CD4300ED1F25 /* TaskEvaluationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEvaluationUITests.swift; sourceTree = "<group>"; };
 		A9F2FA462D43CD4300ED1F25 /* TaskEvaluationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskEvaluationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A9F2FA562D43CDAF00ED1F25 /* CitiesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesModel.swift; sourceTree = "<group>"; };
+		A9F2FA5A2D43CE0600ED1F25 /* au_cities.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = au_cities.json; sourceTree = "<group>"; };
+		A9F2FA5C2D43CE3600ED1F25 /* CitiesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitiesViewModel.swift; sourceTree = "<group>"; };
+		A9F2FA5E2D43E12100ED1F25 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,10 +102,14 @@
 		A9F2FA282D43CD4100ED1F25 /* TaskEvaluation */ = {
 			isa = PBXGroup;
 			children = (
+				A9F2FA582D43CE0600ED1F25 /* Utilities */,
+				A9F2FA552D43CD9600ED1F25 /* ViewModel */,
+				A9F2FA542D43CD8800ED1F25 /* Model */,
+				A9F2FA532D43CD7C00ED1F25 /* View */,
 				A9F2FA292D43CD4100ED1F25 /* TaskEvaluationApp.swift */,
-				A9F2FA2B2D43CD4100ED1F25 /* ContentView.swift */,
 				A9F2FA2D2D43CD4300ED1F25 /* Assets.xcassets */,
 				A9F2FA2F2D43CD4300ED1F25 /* Preview Content */,
+				A9F2FA5E2D43E12100ED1F25 /* README.md */,
 			);
 			path = TaskEvaluation;
 			sourceTree = "<group>";
@@ -125,6 +137,46 @@
 				A9F2FA462D43CD4300ED1F25 /* TaskEvaluationUITestsLaunchTests.swift */,
 			);
 			path = TaskEvaluationUITests;
+			sourceTree = "<group>";
+		};
+		A9F2FA532D43CD7C00ED1F25 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A9F2FA2B2D43CD4100ED1F25 /* ContentView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A9F2FA542D43CD8800ED1F25 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A9F2FA562D43CDAF00ED1F25 /* CitiesModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A9F2FA552D43CD9600ED1F25 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A9F2FA5C2D43CE3600ED1F25 /* CitiesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A9F2FA582D43CE0600ED1F25 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				A9F2FA592D43CE0600ED1F25 /* JsonFiles */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		A9F2FA592D43CE0600ED1F25 /* JsonFiles */ = {
+			isa = PBXGroup;
+			children = (
+				A9F2FA5A2D43CE0600ED1F25 /* au_cities.json */,
+			);
+			path = JsonFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,7 +283,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9F2FA5B2D43CE0600ED1F25 /* au_cities.json in Resources */,
 				A9F2FA312D43CD4300ED1F25 /* Preview Assets.xcassets in Resources */,
+				A9F2FA5F2D43E23C00ED1F25 /* README.md in Resources */,
 				A9F2FA2E2D43CD4300ED1F25 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -258,6 +312,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A9F2FA2C2D43CD4100ED1F25 /* ContentView.swift in Sources */,
+				A9F2FA5D2D43CE3600ED1F25 /* CitiesViewModel.swift in Sources */,
+				A9F2FA572D43CDAF00ED1F25 /* CitiesModel.swift in Sources */,
 				A9F2FA2A2D43CD4100ED1F25 /* TaskEvaluationApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
