@@ -31,7 +31,7 @@ struct ContentView: View {
                             .padding()
                 
             List {
-                ForEach(groupedCities.keys.sorted(), id: \.self) { section in
+                ForEach(sortedSections, id: \.self) { section in
                     DisclosureGroup(
                         isExpanded: Binding(
                             get: { expandedSections.contains(section) },
@@ -44,7 +44,7 @@ struct ContentView: View {
                             }
                         ),
                         content: {
-                            ForEach(groupedCities[section] ?? []) { city in
+                            ForEach(sortedCities(for: section)) { city in
                                 Text(city.city)
                                     .font(.body)
                                     .padding(.leading, 10)
@@ -70,19 +70,22 @@ struct ContentView: View {
     }
     
 
-    // MARK :  Grouped and optionally reversed cities
-        private var groupedCities: [String: [CitiesModel]] {
-            let grouped = Dictionary(grouping: cityData, by: { $0.admin_name})
-            if isReversed {
-                return grouped.mapValues { $0.reversed() }
-            }
-            return grouped
+    // Group cities by admin_name//
+    private var groupedCities: [String: [CitiesModel]] {
+            Dictionary(grouping: cityData, by: { $0.admin_name })
         }
+        
 
-        // Section titles, optionally reversed
-        private var sectionTitles: [String] {
-            let titles = groupedCities.keys.sorted()
-            return isReversed ? titles.reversed() : titles
+    // Sort and Reverse Sections
+        private var sortedSections: [String] {
+            let sections = groupedCities.keys.sorted()
+            return isReversed ? sections.reversed() : sections
+        }
+        
+        // Sort and Reverse Cities in Each Section
+        private func sortedCities(for section: String) -> [CitiesModel] {
+            let cities = groupedCities[section] ?? []
+            return isReversed ? cities.reversed() : cities
         }
 }
 struct ContentView_Previews: PreviewProvider {
